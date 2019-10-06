@@ -57,7 +57,6 @@ ROOT_URLCONF = 'meildazis.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        # 'DIRS': ['meildazis/templates/'],
         'DIRS': [os.path.join(BASE_DIR, 'meildazis/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
