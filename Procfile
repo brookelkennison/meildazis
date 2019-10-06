@@ -1,1 +1,1 @@
-web: gunicorn meildazis.wsgi --log-file -
+web: gunicorn meildazis-olderversion.wsgi --log-file -
