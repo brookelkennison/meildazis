@@ -71,7 +71,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'meildazis-olderversion.wsgi.application',
+WSGI_APPLICATION = 'meildazis.wsgi.application',
 
 
 # Database
