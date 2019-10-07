@@ -8,7 +8,7 @@
             <small>
                 {{ post.created_on.date }} |&nbsp; Categories: &nbsp;
                 {% for category in post.categories.all %}
-                    <a href="{{category.name}}/">
+                    <a>
                         {{ category.name }}
                     </a>&nbsp;
                     {% endfor %}

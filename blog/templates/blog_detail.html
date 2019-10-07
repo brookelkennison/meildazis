@@ -5,12 +5,12 @@
         <small>
             {{ post.created_on.date }} |&nbsp; Categories: &nbsp;
             {% for category in post.categories.all %}
-            <a href="#">{{ category.name }}</a>&nbsp;
+            <a>{{ category.name }}</a>&nbsp;
             {% endfor %}
         </small>
         <p>{{ post.body | linebreaks }}</p>
         <h3>Leave a comment:</h3>
-        <form action="/blog/{{ post.pk }}" method="post">
+        <form action="/blog/{{ post.id }}/" method="post">
             {% csrf_token %}
             <div class="form-group">
                 {{ form.author }}

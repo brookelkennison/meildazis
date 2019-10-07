@@ -11,28 +11,11 @@ from blog.models import Post, Comment
 
 
 def blog_index(request):
-    post = Post.objects.all()
+    post = Post.objects.all().order_by('-created_on')
     context = {
         'posts': post
     }
     return render(request, 'blog_index.html', context)
-
-
-def blog_category(request, category):
-    posts = Post.objects.filter(
-        categories_name_contains=category
-    ).order_by(
-        '-created_on'
-    )
-    context = {
-        'category': category,
-        'posts': posts
-    }
-    return render(request, 'blog_category.html', context)
-
-# def design_detail(request, design_id):
-#     design = get_object_or_404(Design, pk=design_id)
-#     return render(request, 'design_detail.html', {'design': design})
 
 
 def blog_detail(request, post_id):
@@ -53,5 +36,4 @@ def blog_detail(request, post_id):
         "comments": comments,
         "form": form,
     }
-
     return render(request, "blog_detail.html", context)
